@@ -63,7 +63,6 @@ function arrayEquals(arr1, arr2) {
 // minimum would be [0, 2, 2, 1, 4]
 function differenceFromMinimum(costs) {
     var min = costs[1];
-    var arr2 = [];
     for (var i = 0; i < costs.length; i++) {
         if (costs[i] < min[1]) {
             min = costs[i];
