@@ -2,8 +2,13 @@
 // Takes an array and returns and object where each key is the index of the
 // array and each value is the value.
 // Example: [1, 2, 3] -> { "0": 1, "1": 2, "2": 3 }
-function arrayToObject(arr) {}
-
+function arrayToObject(arr) {
+    var dict = {};
+    for (var i = 0; i < arr.length; i++) {
+        dict[i] = arr[i];
+    }
+    return dict;
+}
 
 // (String) -> Object
 // Return a dictionary of  inventory items encoded in the provided string.
