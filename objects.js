@@ -88,8 +88,29 @@ Movie.prototype.equals = function(otherMovie) {
 };
 
 function FMDB(movies) {
-    
+    this.movies = movies;
 }
+
+FMDB.prototype.moviesByCastMember = function(member) {
+    arr = [];
+    for (var i = 0; i < this.movies.length; i++) {
+        for (let key of Object.keys(this.movies[i].cast)) {
+            if (this.movies[i].cast[key] === member) {
+                arr.push(this.movies[i]);
+            }
+        }
+    }
+    return arr;
+};
+FMDB.prototype.moviesByDirector = function(dir) {
+    arr = [];
+    for (var i = 0; i < this.movies.length; i++) {
+        if (this.movies[i].director == dir) {
+            arr.push(this.movies[i]);
+        }
+    }
+    return arr;
+};
 
 exports.arrayToObject = arrayToObject;
 exports.readInventory = readInventory;
